@@ -299,9 +299,4 @@ contract Rules is AdminProxy, RulesProxy {
     function getKeyCount() public view returns (uint) {
         return keysWhitelist.length;
     }
-
-    function triggerRulesChangeEvent(bool addsRestrictions) public {
-        Ingress i = Ingress(ingressContractAddress);
-        i.emitRulesChangeEvent(addsRestrictions);
-    }
 }
